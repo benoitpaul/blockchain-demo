@@ -1,4 +1,4 @@
-import CryptoJS from 'crypto-js';
+import { Injectable } from '@angular/core';
 import { Block } from './block';
 import { BlockchainHashCalculatorService } from './blockchain-hash-calculator.service';
 import { BlockchainValidatorService } from './blockchain-validator.service';
@@ -29,7 +29,7 @@ export class Blockchain {
     if (this.validator.isValidChain(newBlocks) && newBlocks.length > this.blocks.length) {
       console.log('Received blockchain is valid. Replacing current blockchain with received blockchain');
       this.blocks = newBlocks;
-      broadcast(responseLatestMsg());
+      this.broadcast(this.responseLatestMsg());
     } else {
       console.log('Received blockchain invalid');
     }
@@ -52,11 +52,11 @@ export class Blockchain {
       nextHash);
   }
 
-  broadcast() {
+  broadcast(message: any) {
     console.log('to-do');
   }
 
-  responseLatestMs() {
+  responseLatestMsg() {
     return {
       //'type': MessageType.RESPONSE_BLOCKCHAIN,
       'data': JSON.stringify([this.getLatestBlock()])

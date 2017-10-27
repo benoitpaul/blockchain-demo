@@ -1,0 +1,7 @@
+<div class="blockchain">
+  <ol>
+    <li *ngFor="let block of blockchain.blocks">
+      <app-block [block]="block"></app-block>
+    </li>
+    </ol>
+</div>
