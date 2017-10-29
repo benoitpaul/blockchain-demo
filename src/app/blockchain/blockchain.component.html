@@ -1,6 +1,9 @@
 <div class="blockchain">
-  <ol>
-    <li *ngFor="let block of blockchain.blocks">
+  <div>
+    <button class="btn btn-primary" (click)="onAddBlock()">Add Block</button>
+  </div>
+  <ol class="list-group">
+    <li class="list-group-item" *ngFor="let block of blockchain.blocks">
       <app-block [block]="block"></app-block>
     </li>
     </ol>

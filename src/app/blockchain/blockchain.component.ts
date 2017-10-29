@@ -14,4 +14,9 @@ export class BlockchainComponent implements OnInit {
   ngOnInit() {
   }
 
+  onAddBlock(){
+    const newBlock = this.blockchain.generateNextBlock("newBlock");
+    this.blockchain.addBlock(newBlock);
+  }
+
 }

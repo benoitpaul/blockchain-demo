@@ -1,3 +1,17 @@
-<div class="block">
-  {{block.index}}
+<div class="panel panel-default block">
+  <div class="panel-heading">{{block.index}}</div>
+  <div class="panel-body">
+    <div>
+      Previous hash: {{block.previousHash}}
+    </div>
+    <div>
+      Timestamp: {{block.timestamp}}
+    </div>
+    <div>
+      Hash: {{block.hash}}
+    </div>
+    <div>
+      Data: {{block.data}}
+    </div>
+  </div>
 </div>
