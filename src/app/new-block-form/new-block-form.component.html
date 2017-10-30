@@ -1,0 +1,10 @@
+<div class="new-block-form">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label>Data</label>
+      <input type="text" class="form-control" id="data" required
+        ngModel name="data" />
+    </div>
+    <button type="submit" class="btn btn-success">Add Block</button>
+  </form>
+</div>

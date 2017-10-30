@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { Blockchain } from '../blockchain';
 
 @Component({
@@ -14,8 +14,8 @@ export class BlockchainComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddBlock(){
-    const newBlock = this.blockchain.generateNextBlock("newBlock");
+  onAddBlock(data){
+    const newBlock = this.blockchain.generateNextBlock(data);
     this.blockchain.addBlock(newBlock);
   }
 
